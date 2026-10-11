@@ -9,7 +9,7 @@ import { toast } from 'sonner';
  * - Automatically refreshes an expired access token once per request.
  */
 export const api = axios.create({
-  baseURL: '/api',
+  baseURL: import.meta.env.VITE_API_URL ||'/api',
   withCredentials: true,
   timeout: 45000,
   headers: { 'Content-Type': 'application/json' },
